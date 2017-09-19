@@ -1,0 +1,28 @@
+{
+  "name": "beeblebrox3/behat-example",
+  "type": "project",
+  "require": {
+    "behat/behat": "^3.4",
+    "behat/mink": "~1.5",
+    "behat/mink-extension": "^2.2",
+    "behat/mink-selenium2-driver": "~1.1",
+    "se/selenium-server-standalone": "^2.53"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Luís Henrique Faria",
+      "email": "luish.faria@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "scripts": {
+    "post-install-cmd": [
+      "rm -f vendor/bin/chromedriver",
+      "wget -P vendor/bin http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip",
+      "unzip vendor/bin/chromedriver_linux64.zip -d vendor/bin",
+      "rm -f vendor/bin/chromedriver_linux64.zip",
+      "chmod +x scripts/selenium.sh"
+    ]
+  }
+}
