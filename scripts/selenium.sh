@@ -2,10 +2,9 @@
 
 PORT_BUSY=$(lsof -i :4444)
 
-if [[ -z "$PORT_BUSY" ]]
+if [ -z "$PORT_BUSY" ]
 then
-    SCRIPT=$(readlink -m $(type -p $0))
-    BASE_DIR=$(dirname ${SCRIPT})
+    BASE_DIR=$(dirname $0)
 
     SELENIUM_SERVER=${BASE_DIR}/../vendor/bin/selenium-server-standalone
     CHROMEDRIVER=${BASE_DIR}/../vendor/bin/chromedriver
